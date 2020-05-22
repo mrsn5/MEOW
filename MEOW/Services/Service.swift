@@ -14,8 +14,8 @@ protocol LoadService {
     associatedtype R
     
     func load(with key: K,
-              decode: @escaping (R) -> V,
-              handler: @escaping (Result<V, ServiceError>) -> ())
+              decode: @escaping (R?) throws -> V?,
+              handler: @escaping (Result<V?, ServiceError>) -> ())
 }
 
 protocol SaveService {
@@ -23,9 +23,10 @@ protocol SaveService {
     associatedtype V
     associatedtype R
     
-    func save(_ data: V,
+    func save(_ data: V?,
               with key: K,
-              encode: @escaping (V) -> R)
+              encode: @escaping (V?) throws -> R?,
+              completiom: ((Result<R?, ServiceError>) -> ())?)
 }
 
 

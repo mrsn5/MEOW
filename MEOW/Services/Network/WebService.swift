@@ -25,8 +25,8 @@ class Webservice<V>: LoadService {
     }
     
     func load(with url: URL,
-              decode: @escaping ((Data?, URLResponse?)) -> V,
-              handler: @escaping (Result<V, ServiceError>) -> ())
+              decode: @escaping ((Data, URLResponse)?) throws -> V?,
+              handler: @escaping (Result<V?, ServiceError>) -> ())
     {
         cancel(url: url)
         let request = URLRequest(url: url) // MARK:-TODO add api key
@@ -41,8 +41,17 @@ class Webservice<V>: LoadService {
                 return
             }
             
-            let result = decode((data, response))
-            handler(.success(result))
+            do {
+                if let data = data, let response = response {
+                    let result = try decode((data, response))
+                    handler(.success(result))
+                } else {
+                    handler(.success(nil))
+                }
+            } catch {
+                handler(.failure(.decoding(description: error.localizedDescription)))
+                OSLog.decodingError(error: .decoding(description: error.localizedDescription))
+            }
             self?.cancel(url: url)
         }
         dataTask.resume()

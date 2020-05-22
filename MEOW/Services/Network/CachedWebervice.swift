@@ -27,8 +27,8 @@ class CachedWebervice<V, C: Cache>: Webservice<V> {
     
     override func load(
         with url: URL,
-        decode: @escaping ((Data?, URLResponse?)) -> V,
-        handler: @escaping (Result<V, ServiceError>) -> ())
+        decode: @escaping ((Data, URLResponse)?) throws -> V?,
+        handler: @escaping (Result<V?, ServiceError>) -> ())
     {
         switch policy {
         case .ignoreCache:
@@ -42,11 +42,11 @@ class CachedWebervice<V, C: Cache>: Webservice<V> {
     
     private func loadCacheAndUpdate(
         with url: URL,
-        decode: @escaping ((Data?, URLResponse?)) -> V,
-        handler: @escaping (Result<V, ServiceError>) -> ())
+        decode: @escaping ((Data, URLResponse)?) throws -> V?,
+        handler: @escaping (Result<V?, ServiceError>) -> ())
     {
         cacheService.load(with: cacheKey(for: url), decode: decodeCache(raw:)) { result in
-            if case .success(let data) = result {
+            if case .success(let data) = result, data != nil {
                 handler(.success(data))
             }
             super.load(with: url, decode: decode, handler: handler)
@@ -55,11 +55,11 @@ class CachedWebervice<V, C: Cache>: Webservice<V> {
     
     private func loadCacheElseLoad(
         with url: URL,
-        decode: @escaping ((Data?, URLResponse?)) -> V,
-        handler: @escaping (Result<V, ServiceError>) -> ())
+        decode: @escaping ((Data, URLResponse)?) throws -> V?,
+        handler: @escaping (Result<V?, ServiceError>) -> ())
     {
         cacheService.load(with: cacheKey(for: url), decode: decodeCache(raw:)) { result in
-            if case .success(let data) = result {
+            if case .success(let data) = result, data != nil {
                 handler(.success(data))
                 return
             }
@@ -69,13 +69,13 @@ class CachedWebervice<V, C: Cache>: Webservice<V> {
     
     private func ignoreCache(
         with url: URL,
-        decode: @escaping ((Data?, URLResponse?)) -> V,
-        handler: @escaping (Result<V, ServiceError>) -> ())
+        decode: @escaping ((Data, URLResponse)?) throws -> V?,
+        handler: @escaping (Result<V?, ServiceError>) -> ())
     {
         super.load(with: url, decode: decode, handler: handler)
     }
     
-    func decodeCache(raw: C.V?) -> V {
+    func decodeCache(raw: C.V?) throws -> V? {
         fatalError("decodeCache(raw:) has not been implemented")
     }
     

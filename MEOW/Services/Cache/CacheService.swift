@@ -9,9 +9,6 @@
 import Foundation
 
 class CacheService<V, C: Cache>: LoadService, SaveService {
-    typealias K = C.K
-    typealias V = V
-    typealias R = C.V?
 
     var cache: C
     
@@ -20,16 +17,27 @@ class CacheService<V, C: Cache>: LoadService, SaveService {
     }
     
     func load(with key: C.K,
-              decode: @escaping (C.V?) -> V,
-              handler: @escaping (Result<V, ServiceError>) -> ())
+              decode: @escaping (C.V?) throws -> V?,
+              handler: @escaping (Result<V?, ServiceError>) -> ())
     {
-        handler(.success(decode(cache[key])))
+        do {
+            handler(.success(try decode(cache[key])))
+        } catch {
+            handler(.failure(.decoding(description: error.localizedDescription)))
+        }
     }
     
-    func save(_ data: V,
+    func save(_ data: V?,
               with key: C.K,
-              encode: @escaping (V) -> C.V?)
+              encode: @escaping (V?) throws -> C.V?,
+              completiom: ((Result<C.V?, ServiceError>) -> ())?)
     {
-        cache[key] = encode(data)
+        do {
+            let encoded = try encode(data)
+            cache[key] = encoded
+            completiom?(.success(encoded))
+        } catch {
+            completiom?(.failure(.encoding(description: error.localizedDescription)))
+        }
     }
 }

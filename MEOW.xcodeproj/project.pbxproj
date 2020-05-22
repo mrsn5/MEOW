@@ -21,6 +21,8 @@
 		C3A69C4424784AB8000AF664 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C4324784AB8000AF664 /* ImageCacheService.swift */; };
 		C3A69C4624784B50000AF664 /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C4524784B50000AF664 /* CacheService.swift */; };
 		C3A69C4924785335000AF664 /* CachedWebervice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C4824785335000AF664 /* CachedWebervice.swift */; };
+		C3A69C4C24785CA0000AF664 /* CodableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C4B24785CA0000AF664 /* CodableService.swift */; };
+		C3A69C4E24787ABB000AF664 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C4D24787ABB000AF664 /* ImageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		C3A69C4324784AB8000AF664 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
 		C3A69C4524784B50000AF664 /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 		C3A69C4824785335000AF664 /* CachedWebervice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedWebervice.swift; sourceTree = "<group>"; };
+		C3A69C4B24785CA0000AF664 /* CodableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableService.swift; sourceTree = "<group>"; };
+		C3A69C4D24787ABB000AF664 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +94,7 @@
 			children = (
 				C3A69C3724783A51000AF664 /* Service.swift */,
 				C3A69C3E24784A04000AF664 /* Cache */,
-				C3A69C3924783A71000AF664 /* WebService.swift */,
-				C3A69C4824785335000AF664 /* CachedWebervice.swift */,
+				C3A69C4A24785C3D000AF664 /* Network */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -113,6 +116,17 @@
 				C3A69C4324784AB8000AF664 /* ImageCacheService.swift */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		C3A69C4A24785C3D000AF664 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C3A69C3924783A71000AF664 /* WebService.swift */,
+				C3A69C4824785335000AF664 /* CachedWebervice.swift */,
+				C3A69C4B24785CA0000AF664 /* CodableService.swift */,
+				C3A69C4D24787ABB000AF664 /* ImageService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +206,9 @@
 				C3A69C3824783A51000AF664 /* Service.swift in Sources */,
 				C3A69C4624784B50000AF664 /* CacheService.swift in Sources */,
 				C3A69C4924785335000AF664 /* CachedWebervice.swift in Sources */,
+				C3A69C4C24785CA0000AF664 /* CodableService.swift in Sources */,
 				C3A69C3D24783E19000AF664 /* OSLog.swift in Sources */,
+				C3A69C4E24787ABB000AF664 /* ImageService.swift in Sources */,
 				C3A69C23247837EE000AF664 /* AppDelegate.swift in Sources */,
 				C3A69C3A24783A71000AF664 /* WebService.swift in Sources */,
 				C3A69C25247837EE000AF664 /* SceneDelegate.swift in Sources */,

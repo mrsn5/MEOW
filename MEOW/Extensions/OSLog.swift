@@ -11,12 +11,13 @@ import os.log
 
 extension OSLog {
     private static var subsystem = Bundle.main.bundleIdentifier!
-
+    
     static let network = OSLog(subsystem: subsystem, category: "network")
+    static let decoding = OSLog(subsystem: subsystem, category: "decoding")
     static let service = OSLog(subsystem: subsystem, category: "service")
     static let viper = OSLog(subsystem: subsystem, category: "view")
-
-
+    
+    
     static func networkError(request: URLRequest, response: URLResponse?) {
         networkLog(request: request, response: response, type: .error)
     }
@@ -32,7 +33,14 @@ extension OSLog {
                request.httpMethod ?? "",
                httpResponse?.statusCode ?? 0,
                request.url?.absoluteString ?? ""
-               )
+        )
+    }
+    
+    static func decodingError(error: ServiceError) {
+        os_log(.error, log: .decoding,
+               "[Decoding error] %s",
+               error.localizedDescription
+        )
     }
     
 }
