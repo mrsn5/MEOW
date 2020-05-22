@@ -13,6 +13,9 @@
 		C3A69C2A247837EE000AF664 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A69C28247837EE000AF664 /* Main.storyboard */; };
 		C3A69C2C247837F0000AF664 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A69C2B247837F0000AF664 /* Assets.xcassets */; };
 		C3A69C2F247837F0000AF664 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A69C2D247837F0000AF664 /* LaunchScreen.storyboard */; };
+		C3A69C3824783A51000AF664 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C3724783A51000AF664 /* Service.swift */; };
+		C3A69C3A24783A71000AF664 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C3924783A71000AF664 /* WebService.swift */; };
+		C3A69C3D24783E19000AF664 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C3C24783E19000AF664 /* OSLog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		C3A69C2B247837F0000AF664 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3A69C2E247837F0000AF664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3A69C30247837F0000AF664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3A69C3724783A51000AF664 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		C3A69C3924783A71000AF664 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		C3A69C3C24783E19000AF664 /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 		C3A69C21247837EE000AF664 /* MEOW */ = {
 			isa = PBXGroup;
 			children = (
+				C3A69C3B24783DD2000AF664 /* Extensions */,
+				C3A69C3624783A28000AF664 /* Services */,
 				C3A69C22247837EE000AF664 /* AppDelegate.swift */,
 				C3A69C24247837EE000AF664 /* SceneDelegate.swift */,
 				C3A69C26247837EE000AF664 /* ViewController.swift */,
@@ -65,6 +73,23 @@
 				C3A69C30247837F0000AF664 /* Info.plist */,
 			);
 			path = MEOW;
+			sourceTree = "<group>";
+		};
+		C3A69C3624783A28000AF664 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C3A69C3724783A51000AF664 /* Service.swift */,
+				C3A69C3924783A71000AF664 /* WebService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C3A69C3B24783DD2000AF664 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C3A69C3C24783E19000AF664 /* OSLog.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +164,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3A69C27247837EE000AF664 /* ViewController.swift in Sources */,
+				C3A69C3824783A51000AF664 /* Service.swift in Sources */,
+				C3A69C3D24783E19000AF664 /* OSLog.swift in Sources */,
 				C3A69C23247837EE000AF664 /* AppDelegate.swift in Sources */,
+				C3A69C3A24783A71000AF664 /* WebService.swift in Sources */,
 				C3A69C25247837EE000AF664 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
