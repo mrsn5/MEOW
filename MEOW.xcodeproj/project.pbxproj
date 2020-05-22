@@ -16,6 +16,11 @@
 		C3A69C3824783A51000AF664 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C3724783A51000AF664 /* Service.swift */; };
 		C3A69C3A24783A71000AF664 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C3924783A71000AF664 /* WebService.swift */; };
 		C3A69C3D24783E19000AF664 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C3C24783E19000AF664 /* OSLog.swift */; };
+		C3A69C4024784A16000AF664 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C3F24784A16000AF664 /* Cache.swift */; };
+		C3A69C4224784A5D000AF664 /* DataCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C4124784A5D000AF664 /* DataCacheService.swift */; };
+		C3A69C4424784AB8000AF664 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C4324784AB8000AF664 /* ImageCacheService.swift */; };
+		C3A69C4624784B50000AF664 /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C4524784B50000AF664 /* CacheService.swift */; };
+		C3A69C4924785335000AF664 /* CachedWebervice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C4824785335000AF664 /* CachedWebervice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		C3A69C3724783A51000AF664 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		C3A69C3924783A71000AF664 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		C3A69C3C24783E19000AF664 /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
+		C3A69C3F24784A16000AF664 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		C3A69C4124784A5D000AF664 /* DataCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCacheService.swift; sourceTree = "<group>"; };
+		C3A69C4324784AB8000AF664 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
+		C3A69C4524784B50000AF664 /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
+		C3A69C4824785335000AF664 /* CachedWebervice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedWebervice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				C3A69C3724783A51000AF664 /* Service.swift */,
+				C3A69C3E24784A04000AF664 /* Cache */,
 				C3A69C3924783A71000AF664 /* WebService.swift */,
+				C3A69C4824785335000AF664 /* CachedWebervice.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -90,6 +102,17 @@
 				C3A69C3C24783E19000AF664 /* OSLog.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C3A69C3E24784A04000AF664 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				C3A69C3F24784A16000AF664 /* Cache.swift */,
+				C3A69C4524784B50000AF664 /* CacheService.swift */,
+				C3A69C4124784A5D000AF664 /* DataCacheService.swift */,
+				C3A69C4324784AB8000AF664 /* ImageCacheService.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,12 +186,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3A69C4224784A5D000AF664 /* DataCacheService.swift in Sources */,
+				C3A69C4024784A16000AF664 /* Cache.swift in Sources */,
 				C3A69C27247837EE000AF664 /* ViewController.swift in Sources */,
 				C3A69C3824783A51000AF664 /* Service.swift in Sources */,
+				C3A69C4624784B50000AF664 /* CacheService.swift in Sources */,
+				C3A69C4924785335000AF664 /* CachedWebervice.swift in Sources */,
 				C3A69C3D24783E19000AF664 /* OSLog.swift in Sources */,
 				C3A69C23247837EE000AF664 /* AppDelegate.swift in Sources */,
 				C3A69C3A24783A71000AF664 /* WebService.swift in Sources */,
 				C3A69C25247837EE000AF664 /* SceneDelegate.swift in Sources */,
+				C3A69C4424784AB8000AF664 /* ImageCacheService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
