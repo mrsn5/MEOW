@@ -24,10 +24,9 @@ class GalleryFeedCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        imageView.image = UIImage.makeImage(from: UIColor(named: "light shadow") ?? #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0.3))
-        
         guard let image = catImage else { return }
         imageViewModel.cancel(string: image.url)
+        imageView.image = UIImage.makeImage(from: UIColor(named: "light shadow") ?? #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 0.3))
     }
     
     func configure(_ catImage: CatImage?) {
@@ -37,7 +36,13 @@ class GalleryFeedCell: UICollectionViewCell {
         
         imageViewModel.load(string: catImage!.url) { [weak self] image in
             guard let image = image else { return }
-            self?.imageView.image = image
+            guard let size = self?.imageView.frame.size else { return }
+            DispatchQueue.global(qos: .userInteractive).async {
+                let resized = image.resizeFillImage(for: size)
+                DispatchQueue.main.async {
+                    self?.imageView.image = resized
+                }
+            }
         }
         
     }

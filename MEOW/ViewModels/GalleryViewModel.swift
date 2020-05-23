@@ -12,13 +12,18 @@ import os.lock
 class GalleryViewModel {
     
     private var service = CatImageService(dataService: Webservice())
-    private var updateHandler: ([IndexPath]) -> ()
+    private var updateHandler: (([IndexPath]) -> ())?
     private(set) var dataSource: [CatImage]
     private var isLoading = false
     
-    init(dataSource: [CatImage] = [], updateHandler: @escaping ([IndexPath]) -> ()) {
+    init(dataSource: [CatImage] = [], updateHandler: (([IndexPath]) -> ())? = nil) {
         self.dataSource = dataSource
         self.updateHandler = updateHandler
+    }
+    
+    init(service: CatImageService) {
+        self.service = service
+        self.dataSource = []
     }
     
     func fetch(categoryIds: [Int] = []) {
@@ -35,7 +40,7 @@ class GalleryViewModel {
                 let endIndex = self.dataSource.count
                 
                 DispatchQueue.main.async {
-                    self.updateHandler((startIndex..<endIndex)
+                    self.updateHandler?((startIndex..<endIndex)
                         .map { IndexPath(row: $0, section: 0) })
                 }
             }

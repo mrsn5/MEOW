@@ -27,6 +27,25 @@ extension UIImage {
 
 
 extension UIImage {
+    func resizeFillImage(for size: CGSize) -> UIImage? {
+        
+        var fillSize: CGSize?
+        if self.size.width < self.size.height {
+            fillSize = CGSize(width: size.width, height: size.width / self.size.width * self.size.height)
+        } else {
+            fillSize = CGSize(width: size.height / self.size.height * self.size.width, height: size.height)
+        }
+        
+        
+        let renderer = UIGraphicsImageRenderer(size: fillSize!)
+        return renderer.image { (context) in
+            self.draw(in: CGRect(origin: .zero, size: fillSize!))
+        }
+    }
+}
+
+
+extension UIImage {
     
     public class func gif(with data: Data) -> UIImage? {
         guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {

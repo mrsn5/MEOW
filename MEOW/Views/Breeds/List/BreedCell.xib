@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BreedCell" id="gTV-IL-0wX" customClass="BreedCell" customModule="CatTastUIKit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="146" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="146" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pe-Kt-W12">
+                        <rect key="frame" x="8" y="5" width="133" height="22"/>
+                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9fz-86-yI2" customClass="RoundImage" customModule="CatTastUIKit" customModuleProvider="target">
+                        <rect key="frame" x="93" y="47" width="48" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="CGE-ir-mXJ"/>
+                            <constraint firstAttribute="width" constant="48" id="WbK-Zt-xea"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="5pe-Kt-W12" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="1k6-xV-2wD"/>
+                <constraint firstAttribute="bottom" secondItem="9fz-86-yI2" secondAttribute="bottom" constant="5" id="Xxs-bn-7Iq"/>
+                <constraint firstItem="5pe-Kt-W12" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="ZZU-RC-Xd6"/>
+                <constraint firstAttribute="trailing" secondItem="5pe-Kt-W12" secondAttribute="trailing" constant="5" id="ea1-Z5-L04"/>
+                <constraint firstAttribute="trailing" secondItem="9fz-86-yI2" secondAttribute="trailing" constant="5" id="svb-Gj-fbM"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="146" height="100"/>
+            <connections>
+                <outlet property="imageView" destination="9fz-86-yI2" id="eca-d2-zAQ"/>
+                <outlet property="label" destination="5pe-Kt-W12" id="FoL-IO-ENi"/>
+            </connections>
+            <point key="canvasLocation" x="-71.014492753623188" y="136.60714285714286"/>
+        </collectionViewCell>
+    </objects>
+</document>

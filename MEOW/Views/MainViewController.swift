@@ -44,8 +44,8 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let breed = BreedListView()
-//        breed.tabBarItem = UITabBarItem(title: "Breeds", image: UIImage(systemName: "square.grid.3x2"), selectedImage: UIImage(systemName: "square.grid.3x2.fill"))
+        let breed = BreedListView()
+        breed.tabBarItem = UITabBarItem(title: "Breeds", image: UIImage(systemName: "square.grid.3x2"), selectedImage: UIImage(systemName: "square.grid.3x2.fill"))
 //
 //        let quiz = QuizCoordinator.shared.rootViewController
 //        quiz.tabBarItem = UITabBarItem(title: "Quiz", image: UIImage(systemName: "doc.richtext"), selectedImage: UIImage(systemName: "doc.richtext"))
@@ -55,7 +55,7 @@ class MainViewController: UITabBarController {
         
         
         
-        viewControllers = [gallery]
+        viewControllers = [breed, gallery]
 //        selectedIndex = 1
         
         setupUI()

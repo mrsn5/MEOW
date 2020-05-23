@@ -10,7 +10,6 @@
 		C3A69C23247837EE000AF664 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C22247837EE000AF664 /* AppDelegate.swift */; };
 		C3A69C25247837EE000AF664 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C24247837EE000AF664 /* SceneDelegate.swift */; };
 		C3A69C27247837EE000AF664 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C26247837EE000AF664 /* ViewController.swift */; };
-		C3A69C2A247837EE000AF664 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A69C28247837EE000AF664 /* Main.storyboard */; };
 		C3A69C2C247837F0000AF664 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A69C2B247837F0000AF664 /* Assets.xcassets */; };
 		C3A69C2F247837F0000AF664 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A69C2D247837F0000AF664 /* LaunchScreen.storyboard */; };
 		C3A69C3824783A51000AF664 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C3724783A51000AF664 /* Service.swift */; };
@@ -45,6 +44,24 @@
 		C3A69C8A24791EFF000AF664 /* MosaicLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C8924791EFF000AF664 /* MosaicLayout.swift */; };
 		C3A69C8C24791F37000AF664 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C8B24791F37000AF664 /* UIView.swift */; };
 		C3A69C8E24791FB7000AF664 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C8D24791FB7000AF664 /* GalleryViewModel.swift */; };
+		C3A69C9A247926B0000AF664 /* BreedDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C91247926B0000AF664 /* BreedDetailsView.swift */; };
+		C3A69C9B247926B0000AF664 /* BreedDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3A69C92247926B0000AF664 /* BreedDetailsView.xib */; };
+		C3A69C9C247926B0000AF664 /* HorizontalBreedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C94247926B0000AF664 /* HorizontalBreedList.swift */; };
+		C3A69C9D247926B0000AF664 /* BreedListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3A69C95247926B0000AF664 /* BreedListView.xib */; };
+		C3A69C9E247926B0000AF664 /* BreedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3A69C96247926B0000AF664 /* BreedCell.xib */; };
+		C3A69C9F247926B0000AF664 /* BreedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C97247926B0000AF664 /* BreedListView.swift */; };
+		C3A69CA0247926B0000AF664 /* HorizontalBreedList.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3A69C98247926B0000AF664 /* HorizontalBreedList.xib */; };
+		C3A69CA1247926B0000AF664 /* BreedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69C99247926B0000AF664 /* BreedCell.swift */; };
+		C3A69CA3247926D3000AF664 /* BreedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69CA2247926D3000AF664 /* BreedViewModel.swift */; };
+		C3A69CA524792C2D000AF664 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69CA424792C2D000AF664 /* String.swift */; };
+		C3A69CAC24792CAD000AF664 /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69CA724792CAD000AF664 /* RoundImage.swift */; };
+		C3A69CAD24792CAD000AF664 /* Capsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69CA824792CAD000AF664 /* Capsule.swift */; };
+		C3A69CAE24792CAD000AF664 /* RandomPaw.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69CA924792CAD000AF664 /* RandomPaw.swift */; };
+		C3A69CAF24792CAD000AF664 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69CAA24792CAD000AF664 /* ProgressBar.swift */; };
+		C3A69CB024792CAD000AF664 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69CAB24792CAD000AF664 /* RoundedButton.swift */; };
+		C3A69CB224793923000AF664 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69CB124793923000AF664 /* UIColor.swift */; };
+		C3A69CB42479395D000AF664 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69CB32479395D000AF664 /* CGPoint.swift */; };
+		C3A69CB624793E04000AF664 /* BreedCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69CB524793E04000AF664 /* BreedCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +69,6 @@
 		C3A69C22247837EE000AF664 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3A69C24247837EE000AF664 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C3A69C26247837EE000AF664 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C3A69C29247837EE000AF664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3A69C2B247837F0000AF664 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3A69C2E247837F0000AF664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3A69C30247837F0000AF664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +104,24 @@
 		C3A69C8924791EFF000AF664 /* MosaicLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MosaicLayout.swift; sourceTree = "<group>"; };
 		C3A69C8B24791F37000AF664 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		C3A69C8D24791FB7000AF664 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
+		C3A69C91247926B0000AF664 /* BreedDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedDetailsView.swift; sourceTree = "<group>"; };
+		C3A69C92247926B0000AF664 /* BreedDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BreedDetailsView.xib; sourceTree = "<group>"; };
+		C3A69C94247926B0000AF664 /* HorizontalBreedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalBreedList.swift; sourceTree = "<group>"; };
+		C3A69C95247926B0000AF664 /* BreedListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BreedListView.xib; sourceTree = "<group>"; };
+		C3A69C96247926B0000AF664 /* BreedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BreedCell.xib; sourceTree = "<group>"; };
+		C3A69C97247926B0000AF664 /* BreedListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedListView.swift; sourceTree = "<group>"; };
+		C3A69C98247926B0000AF664 /* HorizontalBreedList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HorizontalBreedList.xib; sourceTree = "<group>"; };
+		C3A69C99247926B0000AF664 /* BreedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedCell.swift; sourceTree = "<group>"; };
+		C3A69CA2247926D3000AF664 /* BreedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedViewModel.swift; sourceTree = "<group>"; };
+		C3A69CA424792C2D000AF664 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		C3A69CA724792CAD000AF664 /* RoundImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
+		C3A69CA824792CAD000AF664 /* Capsule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Capsule.swift; sourceTree = "<group>"; };
+		C3A69CA924792CAD000AF664 /* RandomPaw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomPaw.swift; sourceTree = "<group>"; };
+		C3A69CAA24792CAD000AF664 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		C3A69CAB24792CAD000AF664 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		C3A69CB124793923000AF664 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		C3A69CB32479395D000AF664 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		C3A69CB524793E04000AF664 /* BreedCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +162,6 @@
 				C3A69C22247837EE000AF664 /* AppDelegate.swift */,
 				C3A69C24247837EE000AF664 /* SceneDelegate.swift */,
 				C3A69C26247837EE000AF664 /* ViewController.swift */,
-				C3A69C28247837EE000AF664 /* Main.storyboard */,
 				C3A69C2B247837F0000AF664 /* Assets.xcassets */,
 				C3A69C2D247837F0000AF664 /* LaunchScreen.storyboard */,
 				C3A69C30247837F0000AF664 /* Info.plist */,
@@ -219,7 +252,9 @@
 		C3A69C67247914BA000AF664 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C3A69CA624792CAD000AF664 /* _Common */,
 				C3A69C8824791EFF000AF664 /* _Layout */,
+				C3A69C8F247926B0000AF664 /* Breeds */,
 				C3A69C6B24791559000AF664 /* Gallery */,
 				C3A69C6924791537000AF664 /* MainViewController.swift */,
 			);
@@ -231,6 +266,8 @@
 			children = (
 				C3A69C842479169A000AF664 /* ImageViewModel.swift */,
 				C3A69C8D24791FB7000AF664 /* GalleryViewModel.swift */,
+				C3A69CA2247926D3000AF664 /* BreedViewModel.swift */,
+				C3A69CB524793E04000AF664 /* BreedCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -263,6 +300,9 @@
 				C3A69C3C24783E19000AF664 /* OSLog.swift */,
 				C3A69C82247915F2000AF664 /* UIImage.swift */,
 				C3A69C8B24791F37000AF664 /* UIView.swift */,
+				C3A69CA424792C2D000AF664 /* String.swift */,
+				C3A69CB124793923000AF664 /* UIColor.swift */,
+				C3A69CB32479395D000AF664 /* CGPoint.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -273,6 +313,49 @@
 				C3A69C8924791EFF000AF664 /* MosaicLayout.swift */,
 			);
 			path = _Layout;
+			sourceTree = "<group>";
+		};
+		C3A69C8F247926B0000AF664 /* Breeds */ = {
+			isa = PBXGroup;
+			children = (
+				C3A69C90247926B0000AF664 /* Details */,
+				C3A69C93247926B0000AF664 /* List */,
+			);
+			path = Breeds;
+			sourceTree = "<group>";
+		};
+		C3A69C90247926B0000AF664 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				C3A69C91247926B0000AF664 /* BreedDetailsView.swift */,
+				C3A69C92247926B0000AF664 /* BreedDetailsView.xib */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		C3A69C93247926B0000AF664 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				C3A69C94247926B0000AF664 /* HorizontalBreedList.swift */,
+				C3A69C98247926B0000AF664 /* HorizontalBreedList.xib */,
+				C3A69C97247926B0000AF664 /* BreedListView.swift */,
+				C3A69C95247926B0000AF664 /* BreedListView.xib */,
+				C3A69C99247926B0000AF664 /* BreedCell.swift */,
+				C3A69C96247926B0000AF664 /* BreedCell.xib */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		C3A69CA624792CAD000AF664 /* _Common */ = {
+			isa = PBXGroup;
+			children = (
+				C3A69CA724792CAD000AF664 /* RoundImage.swift */,
+				C3A69CA824792CAD000AF664 /* Capsule.swift */,
+				C3A69CA924792CAD000AF664 /* RandomPaw.swift */,
+				C3A69CAA24792CAD000AF664 /* ProgressBar.swift */,
+				C3A69CAB24792CAD000AF664 /* RoundedButton.swift */,
+			);
+			path = _Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,8 +419,11 @@
 				C3A69C2F247837F0000AF664 /* LaunchScreen.storyboard in Resources */,
 				C3A69C7A24791559000AF664 /* GalleryFeedView.xib in Resources */,
 				C3A69C2C247837F0000AF664 /* Assets.xcassets in Resources */,
-				C3A69C2A247837EE000AF664 /* Main.storyboard in Resources */,
+				C3A69C9D247926B0000AF664 /* BreedListView.xib in Resources */,
+				C3A69C9E247926B0000AF664 /* BreedCell.xib in Resources */,
+				C3A69C9B247926B0000AF664 /* BreedDetailsView.xib in Resources */,
 				C3A69C7D24791559000AF664 /* GalleryFeedCell.xib in Resources */,
+				C3A69CA0247926B0000AF664 /* HorizontalBreedList.xib in Resources */,
 				C3A69C7924791559000AF664 /* GalleryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,37 +435,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3A69CA524792C2D000AF664 /* String.swift in Sources */,
+				C3A69CAC24792CAD000AF664 /* RoundImage.swift in Sources */,
+				C3A69CA1247926B0000AF664 /* BreedCell.swift in Sources */,
+				C3A69CA3247926D3000AF664 /* BreedViewModel.swift in Sources */,
 				C3A69C4024784A16000AF664 /* Cache.swift in Sources */,
+				C3A69C9F247926B0000AF664 /* BreedListView.swift in Sources */,
 				C3A69C6A24791537000AF664 /* MainViewController.swift in Sources */,
+				C3A69CB624793E04000AF664 /* BreedCellViewModel.swift in Sources */,
 				C3A69C27247837EE000AF664 /* ViewController.swift in Sources */,
 				C3A69C8A24791EFF000AF664 /* MosaicLayout.swift in Sources */,
 				C3A69C5724788071000AF664 /* Quiz.swift in Sources */,
 				C3A69C5824788071000AF664 /* Breed.swift in Sources */,
+				C3A69C9A247926B0000AF664 /* BreedDetailsView.swift in Sources */,
 				C3A69C7C24791559000AF664 /* GalleryFeedView.swift in Sources */,
+				C3A69CB42479395D000AF664 /* CGPoint.swift in Sources */,
 				C3A69C83247915F2000AF664 /* UIImage.swift in Sources */,
 				C3A69C62247885F0000AF664 /* RAMCache.swift in Sources */,
+				C3A69CB024792CAD000AF664 /* RoundedButton.swift in Sources */,
 				C3A69C3824783A51000AF664 /* Service.swift in Sources */,
 				C3A69C4624784B50000AF664 /* CacheService.swift in Sources */,
 				C3A69C4924785335000AF664 /* CachedWebervice.swift in Sources */,
 				C3A69C64247887F5000AF664 /* BreedService.swift in Sources */,
 				C3A69C8E24791FB7000AF664 /* GalleryViewModel.swift in Sources */,
 				C3A69C5A247881E3000AF664 /* Constants.swift in Sources */,
+				C3A69CAD24792CAD000AF664 /* Capsule.swift in Sources */,
 				C3A69C5D247882DC000AF664 /* CodableDecoder.swift in Sources */,
 				C3A69C852479169A000AF664 /* ImageViewModel.swift in Sources */,
 				C3A69C4C24785CA0000AF664 /* CodableService.swift in Sources */,
 				C3A69C8C24791F37000AF664 /* UIView.swift in Sources */,
 				C3A69C3D24783E19000AF664 /* OSLog.swift in Sources */,
 				C3A69C6024788535000AF664 /* FileStorage.swift in Sources */,
+				C3A69CB224793923000AF664 /* UIColor.swift in Sources */,
 				C3A69C5624788071000AF664 /* CatImage.swift in Sources */,
 				C3A69C7B24791559000AF664 /* GalleryFeedCell.swift in Sources */,
 				C3A69C6624788E02000AF664 /* QuizService.swift in Sources */,
 				C3A69C7824791559000AF664 /* ThumbCell.swift in Sources */,
 				C3A69C4E24787ABB000AF664 /* ImageService.swift in Sources */,
 				C3A69C5124787F65000AF664 /* CatImageService.swift in Sources */,
+				C3A69CAF24792CAD000AF664 /* ProgressBar.swift in Sources */,
 				C3A69C23247837EE000AF664 /* AppDelegate.swift in Sources */,
 				C3A69C3A24783A71000AF664 /* WebService.swift in Sources */,
+				C3A69CAE24792CAD000AF664 /* RandomPaw.swift in Sources */,
 				C3A69C8724791A98000AF664 /* UIImageDecoder.swift in Sources */,
 				C3A69C7F24791559000AF664 /* GalleryView.swift in Sources */,
+				C3A69C9C247926B0000AF664 /* HorizontalBreedList.swift in Sources */,
 				C3A69C25247837EE000AF664 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,14 +487,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C3A69C28247837EE000AF664 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C3A69C29247837EE000AF664 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C3A69C2D247837F0000AF664 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

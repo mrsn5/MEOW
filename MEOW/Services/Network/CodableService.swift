@@ -26,6 +26,6 @@ where C.V == Data, C.K == String {
     }
     
     override func cacheKey(for url: URL) -> C.K {
-        return url.absoluteString
+        return url.absoluteString.sha1()
     }
 }
