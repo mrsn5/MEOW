@@ -37,7 +37,7 @@ class BreedListView: UIViewController {
     override func viewDidLayoutSubviews() {
         let flow = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         flow.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 50, right: 10)
-        let width = (view.frame.width - 40) / 3
+        let width = (view.frame.width - 44) / 3
         flow.itemSize = CGSize(width: width, height: 100)
         flow.minimumInteritemSpacing = 10
         flow.minimumLineSpacing = 10
