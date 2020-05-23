@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GalleryFeedView" customModule="CatTastUIKit" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="ayK-Vc-T8q" id="HJP-e3-IOO"/>
+                <outlet property="topBar" destination="fVr-pG-Ggc" id="KHa-EY-bFu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ayK-Vc-T8q">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" name="background"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mct-sa-bff">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVr-pG-Ggc">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="WdA-R6-QRe"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paw2" translatesAutoresizingMaskIntoConstraints="NO" id="NTu-ug-ywW" customClass="RandomPaw" customModule="CatTastUIKit" customModuleProvider="target">
+                    <rect key="frame" x="191" y="8" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="F9n-QN-ycI"/>
+                        <constraint firstAttribute="width" constant="32" id="HJI-rc-ti0"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" name="background"/>
+            <constraints>
+                <constraint firstItem="fVr-pG-Ggc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="GGm-MT-A3N"/>
+                <constraint firstItem="ayK-Vc-T8q" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Qrg-cx-99C"/>
+                <constraint firstItem="NTu-ug-ywW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="RRr-eM-MhB"/>
+                <constraint firstItem="NTu-ug-ywW" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="T4e-JG-tC7"/>
+                <constraint firstItem="fVr-pG-Ggc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="arb-6S-jpq"/>
+                <constraint firstItem="fVr-pG-Ggc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="cew-wJ-qni"/>
+                <constraint firstItem="ayK-Vc-T8q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="l2J-7f-Z7n"/>
+                <constraint firstItem="ayK-Vc-T8q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="teg-b5-eQj"/>
+                <constraint firstAttribute="bottom" secondItem="ayK-Vc-T8q" secondAttribute="bottom" id="usJ-SW-dTS"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="101.78571428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="paw2" width="57" height="51"/>
+        <namedColor name="background">
+            <color red="0.87099999189376831" green="0.9179999828338623" blue="0.9649999737739563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -40,6 +40,19 @@ class CachedWebervice<V, C: Cache>: Webservice<V> {
         }
     }
     
+    private func loadAndCache(
+        with url: URL,
+        decode: @escaping ((Data, URLResponse)?) throws -> V?,
+        handler: @escaping (Result<V?, ServiceError>) -> ()) {
+        super.load(with: url, decode: decode) { [weak self] result in
+            handler(result)
+            if case .success(let data) = result {
+                guard let self = self else { return }
+                self.cacheService.save(data, with: self.cacheKey(for: url), encode: self.encodeCache(value:), completiom: nil)
+            }
+        }
+    }
+    
     private func loadCacheAndUpdate(
         with url: URL,
         decode: @escaping ((Data, URLResponse)?) throws -> V?,
@@ -49,7 +62,7 @@ class CachedWebervice<V, C: Cache>: Webservice<V> {
             if case .success(let data) = result, data != nil {
                 handler(.success(data))
             }
-            super.load(with: url, decode: decode, handler: handler)
+            self.loadAndCache(with: url, decode: decode, handler: handler)
         }
     }
     
@@ -63,7 +76,7 @@ class CachedWebervice<V, C: Cache>: Webservice<V> {
                 handler(.success(data))
                 return
             }
-            super.load(with: url, decode: decode, handler: handler)
+            self.loadAndCache(with: url, decode: decode, handler: handler)
         }
     }
     
@@ -72,15 +85,18 @@ class CachedWebervice<V, C: Cache>: Webservice<V> {
         decode: @escaping ((Data, URLResponse)?) throws -> V?,
         handler: @escaping (Result<V?, ServiceError>) -> ())
     {
-        super.load(with: url, decode: decode, handler: handler)
+        self.loadAndCache(with: url, decode: decode, handler: handler)
     }
     
     func decodeCache(raw: C.V?) throws -> V? {
         fatalError("decodeCache(raw:) has not been implemented")
     }
     
+    func encodeCache(value: V?) throws -> C.V? {
+        fatalError("encodeCache(raw:) has not been implemented")
+    }
+    
     func cacheKey(for url: URL) -> C.K {
-        
         fatalError("cacheKey(url:) has not been implemented")
     }
 }

@@ -18,6 +18,13 @@ where C.V == Data, C.K == String {
         return nil
     }
     
+    override func encodeCache(value: V?) throws -> C.V? {
+        if let data = value {
+            return try JSONEncoder().encode(data)
+        }
+        return nil
+    }
+    
     override func cacheKey(for url: URL) -> C.K {
         return url.absoluteString
     }

@@ -18,6 +18,13 @@ where C.V == Data, C.K == String {
         return nil
     }
     
+    override func encodeCache(value: UIImage?) throws -> C.V? {
+        if let data = value {
+            return data.jpegData(compressionQuality: 1.0)
+        }
+        return nil
+    }
+    
     override func cacheKey(for url: URL) -> C.K {
         return url.absoluteString
     }
@@ -26,8 +33,12 @@ where C.V == Data, C.K == String {
 class UIImageService<C: Cache>: CachedWebervice<UIImage, C>
 where C.V == UIImage, C.K == String {
     
-    override func decodeCache(raw: C.V?) throws -> UIImage? {
+    override func decodeCache(raw: UIImage?) throws -> UIImage? {
         return raw
+    }
+    
+    override func encodeCache(value: UIImage?) throws -> UIImage? {
+        return value
     }
     
     override func cacheKey(for url: URL) -> C.K {

@@ -43,4 +43,11 @@ extension OSLog {
         )
     }
     
+    static func defaultError(error: Error) {
+        os_log(.error, log: .decoding,
+               "[Default error] %s",
+               error.localizedDescription
+        )
+    }
+    
 }
