@@ -12,9 +12,12 @@ class GalleryFeedView: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var topBar: UIView!
-    var catImage: CatImage!
     
+    var catImage: CatImage!
     var viewModel: GalleryViewModel!
+    
+    private let imageViewModel = ImageViewModel<ImageRAMCache>(service: UIImageService(cache: ImageRAMCache.shared, policy: .loadCacheElseLoad))
+    private var selectedImage: CatImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,33 +47,32 @@ class GalleryFeedView: UIViewController {
         collectionView.collectionViewLayout = layout
     }
     
-//    func setupTobBar() {
-//        let layer = CAGradientLayer()
-//        layer.name = "gradbar"
-//        layer.frame = topBar.frame
-//        layer.colors = [UIColor(named: "background")!.cgColor, UIColor(named: "background")!.withAlphaComponent(0.0).cgColor]
-//        layer.startPoint = .init(x: 0.5, y: -1.0)
-//        layer.endPoint = .init(x: 0.5, y: 1.0)
-//
-////        for l in view.layer.sublayers ?? [] {
-////            if l.name == "gradbar" {
-////                 l.removeFromSuperlayer()
-////            }
-////        }
-//
-//        view.layer.insertSublayer(layer, below: topBar.layer)
-//    }
-    
-//    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-//        setupTobBar()
-//    }
-    
     func onFetchCompleted(with newIndexPathsToReload: [IndexPath]?) {
         guard let newIndexPathsToReload = newIndexPathsToReload else {
             collectionView.reloadData()
             return
         }
         collectionView.insertItems(at: newIndexPathsToReload)
+    }
+    
+    func makeMenu() -> UIMenu {
+        let share = UIAction(title: "Share", image: UIImage(systemName: "square.and.arrow.up")) { action in
+            
+            if let image = self.selectedImage?.url, let url = URL(string: image) {
+                self.imageViewModel.load(string: image) { [weak self] image in
+                    guard let image = image else { return }
+
+                    let vc = UIActivityViewController(activityItems: [url, image], applicationActivities: [])
+                    DispatchQueue.main.async {
+                        self?.present(vc, animated: true)
+                    }
+                
+                }
+            }
+        }
+        
+        let mainMenu = UIMenu(title: "", children: [share])
+        return mainMenu
     }
 }
 
@@ -96,6 +98,22 @@ extension GalleryFeedView: UICollectionViewDelegate, UICollectionViewDataSource 
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedImage = viewModel.dataSource[indexPath.row]
+    }
+    
+    // MARK:- Context Menu
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        let identifier = NSString(string: viewModel.dataSource[indexPath.row].id)
+        self.selectedImage = self.viewModel.dataSource[indexPath.row]
+        
+        return UIContextMenuConfiguration(identifier: identifier, previewProvider: {
+            return ImagePreviewView(imageUrl: self.selectedImage!.url, aspectRatio: CGFloat(self.selectedImage!.height ?? 1) / CGFloat(self.selectedImage!.width ?? 1))
+        }, actionProvider: { suggestedActions in
+            return self.makeMenu()
+        })
+    }
 }
 
 extension GalleryFeedView: UICollectionViewDelegateFlowLayout {

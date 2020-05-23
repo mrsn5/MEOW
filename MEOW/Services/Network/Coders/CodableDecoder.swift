@@ -16,11 +16,5 @@ class CodableCoder {
         }
         return nil
     }
-    
-//    static func encode<V: Decodable>(from: (Data, URLResponse)?) throws -> V? {
-//        if let data = from?.0 {
-//            return try JSONDecoder().decode(V.self, from: data)
-//        }
-//        return nil
-//    }
+
 }

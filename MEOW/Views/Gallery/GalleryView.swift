@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Combine
 
 class GalleryView: UIViewController {
     
@@ -48,8 +47,6 @@ class GalleryView: UIViewController {
         collectionView.insertItems(at: newIndexPathsToReload)
     }
     
-    
-    var cancellable: AnyCancellable?
     func makeMenu() -> UIMenu {
         let share = UIAction(title: "Share", image: UIImage(systemName: "square.and.arrow.up")) { action in
             
@@ -127,7 +124,7 @@ extension GalleryView: UICollectionViewDelegate, UICollectionViewDataSource {
     
 }
 
-private class ImagePreviewView: UIViewController {
+class ImagePreviewView: UIViewController {
     private static let imageViewModel = ImageViewModel<ImageRAMCache>(service: UIImageService(cache: ImageRAMCache.shared, policy: .loadCacheElseLoad))
     
     private let imageView = UIImageView()

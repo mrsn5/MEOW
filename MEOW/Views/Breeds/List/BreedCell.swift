@@ -12,7 +12,7 @@ class BreedCell: UICollectionViewCell {
     
     static let reuseID = String(describing: BreedCell.self)
     
-    let viewModel = BreedCellViewModel()
+    let viewModel = BreedDetailsViewModel()
     
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var imageView: RoundImage!
@@ -88,7 +88,14 @@ class BreedCell: UICollectionViewCell {
         self.breed = breed
         label.text = "\(breed.name)"
         
-        viewModel.fetch(breed: breed) { [weak self] image in
+        viewModel.fetch(breed: breed) { [weak self] _ in
+            self?.showImage(at: 0)
+        }
+    }
+    
+    func showImage(at: Int) {
+        let index = (at + viewModel.catImages.count) % viewModel.catImages.count
+        self.viewModel.load(string: viewModel.catImages[index].url) { [weak self] image in
             guard let image = image else { return }
             guard let size = self?.imageView.frame.size else { return }
             DispatchQueue.global(qos: .userInteractive).async {

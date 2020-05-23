@@ -18,7 +18,7 @@ struct Breed: Codable, Identifiable, Hashable {
     let altNames: String?
     let cfaURL: String?
     let childFriendly: Int?
-    let countryCode, countryCodes, breedResponseDescription: String?
+    let countryCode, countryCodes, breedDescription: String?
     let dogFriendly, energyLevel, experimental, grooming: Int?
     let hairless, healthIssues, hypoallergenic: Int?
     let id: String
@@ -44,7 +44,7 @@ struct Breed: Codable, Identifiable, Hashable {
         case childFriendly = "child_friendly"
         case countryCode = "country_code"
         case countryCodes = "country_codes"
-        case breedResponseDescription = "description"
+        case breedDescription = "description"
         case dogFriendly = "dog_friendly"
         case energyLevel = "energy_level"
         case experimental, grooming, hairless

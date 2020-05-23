@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BreedListView" customModule="CatTastUIKit" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BreedListView" customModule="MEOW" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="igq-59-rHW" id="GTe-NK-g8h"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -35,7 +35,7 @@
                     <color key="textColor" name="accent"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paw1" translatesAutoresizingMaskIntoConstraints="NO" id="aCm-T3-cy5" customClass="RandomPaw" customModule="CatTastUIKit" customModuleProvider="target">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paw1" translatesAutoresizingMaskIntoConstraints="NO" id="aCm-T3-cy5" customClass="RandomPaw" customModule="MEOW" customModuleProvider="target">
                     <rect key="frame" x="231" y="69.5" width="26" height="28"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="28" id="2XM-YM-pNP"/>

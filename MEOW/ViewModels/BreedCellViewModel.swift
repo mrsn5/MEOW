@@ -9,7 +9,7 @@
 import UIKit
 
 
-class BreedCellViewModel: ImageViewModel<FileStorage> {
+class BreedDetailsViewModel: ImageViewModel<FileStorage> {
     
     private var service = CatImageService(dataService: CodableService(cache: FileStorage.shared, policy: .loadCacheElseLoad))
     

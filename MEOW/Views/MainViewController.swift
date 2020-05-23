@@ -23,7 +23,7 @@ class MainCoordinator: Coordinator {
     init(window: UIWindow) {
         self.window = window
         rootViewController = MainViewController()
-//        childCoordinators = [QuizCoordinator.shared]
+        childCoordinators = [QuizCoordinator.shared]
     }
     
     func start() {
@@ -47,16 +47,16 @@ class MainViewController: UITabBarController {
         let breed = BreedListView()
         breed.tabBarItem = UITabBarItem(title: "Breeds", image: UIImage(systemName: "square.grid.3x2"), selectedImage: UIImage(systemName: "square.grid.3x2.fill"))
 //
-//        let quiz = QuizCoordinator.shared.rootViewController
-//        quiz.tabBarItem = UITabBarItem(title: "Quiz", image: UIImage(systemName: "doc.richtext"), selectedImage: UIImage(systemName: "doc.richtext"))
+        let quiz = QuizCoordinator.shared.rootViewController
+        quiz.tabBarItem = UITabBarItem(title: "Quiz", image: UIImage(systemName: "doc.richtext"), selectedImage: UIImage(systemName: "doc.richtext"))
         
         let gallery = GalleryView()
         gallery.tabBarItem = UITabBarItem(title: "Gallery", image: UIImage(systemName: "photo.on.rectangle.fill"), selectedImage: UIImage(systemName: "photo.on.rectangle"))
         
         
         
-        viewControllers = [breed, gallery]
-//        selectedIndex = 1
+        viewControllers = [breed, quiz, gallery]
+        selectedIndex = 1
         
         setupUI()
     }

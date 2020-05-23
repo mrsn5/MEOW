@@ -28,6 +28,16 @@ extension UIImage {
 
 extension UIImage {
     func resizeFillImage(for size: CGSize) -> UIImage? {
+        if isAnimatedImage() {
+            guard let ims = images else { return self }
+            var newImages: [UIImage] = []
+            for i in ims {
+                if let ri = i.resizeFillImage(for: size) {
+                    newImages.append(ri)
+                }
+            }
+            return UIImage.animatedImage(with: newImages, duration: self.duration)
+        }
         
         var fillSize: CGSize?
         if self.size.width < self.size.height {
@@ -41,6 +51,11 @@ extension UIImage {
         return renderer.image { (context) in
             self.draw(in: CGRect(origin: .zero, size: fillSize!))
         }
+    }
+    
+    func isAnimatedImage() -> Bool {
+        guard let count = self.images?.count else { return false }
+        return count > 1
     }
 }
 
@@ -57,6 +72,7 @@ extension UIImage {
     
     class func delayForImageAtIndex(_ index: Int, source: CGImageSource!) -> Double {
         var delay = 0.1
+        
         
         let cfProperties = CGImageSourceCopyPropertiesAtIndex(source, index, nil)
         let gifProperties: CFDictionary = unsafeBitCast(
@@ -166,3 +182,31 @@ extension UIImage {
     }
 }
 
+
+extension UIImage {
+    func blurImage(value: Double) -> UIImage? {
+        let context = CIContext(options: nil)
+        let inputImage = CIImage(image: self)
+        let originalOrientation = self.imageOrientation
+        let originalScale = self.scale
+        
+        let filter = CIFilter(name: "CIGaussianBlur")
+        filter?.setValue(inputImage, forKey: kCIInputImageKey)
+        filter?.setValue(value, forKey: kCIInputRadiusKey)
+        let outputImage = filter?.outputImage
+        
+        var cgImage:CGImage?
+        
+        if let asd = outputImage
+        {
+            cgImage = context.createCGImage(asd, from: (inputImage?.extent)!)
+        }
+        
+        if let cgImageA = cgImage
+        {
+            return UIImage(cgImage: cgImageA, scale: originalScale, orientation: originalOrientation)
+        }
+        
+        return nil
+    }
+}

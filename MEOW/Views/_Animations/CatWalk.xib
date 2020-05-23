@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CatWalk" customModule="CatTastUIKit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="128" height="216"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paw1" translatesAutoresizingMaskIntoConstraints="NO" id="9pR-rL-iiS">
+                    <rect key="frame" x="24" y="166" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="58K-Yj-UaN"/>
+                        <constraint firstAttribute="height" constant="20" id="MW3-AT-NQN"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paw1" translatesAutoresizingMaskIntoConstraints="NO" id="ZfD-mE-BSS">
+                    <rect key="frame" x="24" y="136" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="D4j-YW-byX"/>
+                        <constraint firstAttribute="height" constant="20" id="kcZ-RG-18K"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paw1" translatesAutoresizingMaskIntoConstraints="NO" id="gsh-7p-HZU">
+                    <rect key="frame" x="84" y="86" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="7yp-0z-wgb"/>
+                        <constraint firstAttribute="height" constant="20" id="RwL-IM-upx"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paw1" translatesAutoresizingMaskIntoConstraints="NO" id="x8l-3e-82U">
+                    <rect key="frame" x="84" y="196" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="Ygx-Ne-KaN"/>
+                        <constraint firstAttribute="height" constant="20" id="fmn-tS-TMi"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="x8l-3e-82U" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" constant="30" id="1fn-1v-9tk"/>
+                <constraint firstItem="9pR-rL-iiS" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" constant="-30" id="5pj-oe-XVe"/>
+                <constraint firstItem="gsh-7p-HZU" firstAttribute="centerX" secondItem="x8l-3e-82U" secondAttribute="centerX" id="9zZ-7h-I4U"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9pR-rL-iiS" secondAttribute="bottom" constant="30" id="E1d-VN-nqA"/>
+                <constraint firstItem="ZfD-mE-BSS" firstAttribute="centerX" secondItem="9pR-rL-iiS" secondAttribute="centerX" id="QNW-gn-Z04"/>
+                <constraint firstItem="9pR-rL-iiS" firstAttribute="top" secondItem="ZfD-mE-BSS" secondAttribute="bottom" constant="10" id="gSa-IG-6C6"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="x8l-3e-82U" secondAttribute="bottom" id="kTu-Lb-wY6"/>
+                <constraint firstItem="x8l-3e-82U" firstAttribute="top" secondItem="gsh-7p-HZU" secondAttribute="bottom" constant="90" id="kpk-LZ-mGn"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="paw1" destination="x8l-3e-82U" id="Gm6-Bx-aZE"/>
+                <outlet property="paw2" destination="ZfD-mE-BSS" id="f8c-iz-k7W"/>
+                <outlet property="paw3" destination="9pR-rL-iiS" id="wdy-PS-mbM"/>
+                <outlet property="paw4" destination="gsh-7p-HZU" id="BCw-M0-jSl"/>
+            </connections>
+            <point key="canvasLocation" x="-69.565217391304358" y="132.58928571428572"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="paw1" width="57" height="51"/>
+    </resources>
+</document>

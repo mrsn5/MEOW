@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuizView" customModule="CatTastUIKit" customModuleProvider="target">
+            <connections>
+                <outlet property="cardsView" destination="b1I-Jq-LYn" id="7Jx-8Z-axh"/>
+                <outlet property="nextButton" destination="PwB-vx-sM7" id="wwU-KD-rjP"/>
+                <outlet property="numberOfQuestionLabel" destination="qtH-un-xJh" id="mu0-GG-grr"/>
+                <outlet property="progressBar" destination="J3b-MV-fJX" id="Gzl-UN-3ei"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="J3b-MV-fJX" customClass="ProgressBar" customModule="CatTastUIKit" customModuleProvider="target">
+                    <rect key="frame" x="20" y="84" width="374" height="5"/>
+                    <color key="tintColor" name="primary"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="5" id="ebz-Eu-7PC"/>
+                    </constraints>
+                </progressView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1I-Jq-LYn" customClass="CardStackView" customModule="CatTastUIKit" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="89" width="414" height="773"/>
+                    <subviews>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PwB-vx-sM7" customClass="RoundedButton" customModule="CatTastUIKit" customModuleProvider="target">
+                            <rect key="frame" x="10" y="701" width="394" height="62"/>
+                            <color key="backgroundColor" name="accent"/>
+                            <color key="tintColor" name="accent"/>
+                            <state key="normal" title="NEXT">
+                                <color key="titleColor" name="light shadow"/>
+                            </state>
+                            <connections>
+                                <action selector="nextTapped:" destination="-1" eventType="touchUpInside" id="ccu-tu-2lp"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.80198236420000002" green="0.87799956619999997" blue="0.96130555870000001" alpha="0.34334867289999998" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="PwB-vx-sM7" secondAttribute="trailing" constant="10" id="0gv-gX-SM1"/>
+                        <constraint firstItem="PwB-vx-sM7" firstAttribute="leading" secondItem="b1I-Jq-LYn" secondAttribute="leading" constant="10" id="Gsl-Kt-eUa"/>
+                        <constraint firstAttribute="bottom" secondItem="PwB-vx-sM7" secondAttribute="bottom" constant="10" id="Zgg-l5-nq6"/>
+                        <constraint firstItem="PwB-vx-sM7" firstAttribute="height" secondItem="b1I-Jq-LYn" secondAttribute="height" multiplier="8:100" id="sIw-GW-PgF"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtH-un-xJh">
+                    <rect key="frame" x="10" y="54" width="394" height="25"/>
+                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                    <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6YC-oC-12b">
+                    <rect key="frame" x="349" y="39" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="GdD-Ry-p8d"/>
+                        <constraint firstAttribute="height" constant="50" id="HJJ-v4-k68"/>
+                    </constraints>
+                    <color key="tintColor" name="accent"/>
+                    <state key="normal" image="xmark" catalog="system"/>
+                    <connections>
+                        <action selector="crossTapped:" destination="-1" eventType="touchUpInside" id="JdK-bz-QIb"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" name="background"/>
+            <constraints>
+                <constraint firstItem="qtH-un-xJh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="0PW-Hf-HB8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6YC-oC-12b" secondAttribute="trailing" constant="15" id="0RH-9W-sex"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qtH-un-xJh" secondAttribute="trailing" constant="10" id="2sR-pl-oyi"/>
+                <constraint firstItem="J3b-MV-fJX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="3ck-u4-iX4"/>
+                <constraint firstAttribute="trailing" secondItem="J3b-MV-fJX" secondAttribute="trailing" constant="20" id="IvH-kD-Yrh"/>
+                <constraint firstItem="b1I-Jq-LYn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MPL-NW-8r7"/>
+                <constraint firstItem="b1I-Jq-LYn" firstAttribute="top" secondItem="J3b-MV-fJX" secondAttribute="bottom" id="OUz-8r-F3O"/>
+                <constraint firstItem="qtH-un-xJh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="TiB-PR-M8R"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="b1I-Jq-LYn" secondAttribute="bottom" id="jSO-RI-K5N"/>
+                <constraint firstItem="J3b-MV-fJX" firstAttribute="top" secondItem="qtH-un-xJh" secondAttribute="bottom" constant="5" id="jpH-nW-ufV"/>
+                <constraint firstItem="b1I-Jq-LYn" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="nGt-T1-nNa"/>
+                <constraint firstItem="6YC-oC-12b" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-5" id="tzT-YY-bvD"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="101.78571428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="accent">
+            <color red="1" green="0.57800000905990601" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="background">
+            <color red="0.87099999189376831" green="0.9179999828338623" blue="0.9649999737739563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="light shadow">
+            <color red="0.95300000905990601" green="0.97600001096725464" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary">
+            <color red="0.46200001239776611" green="0.83799999952316284" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

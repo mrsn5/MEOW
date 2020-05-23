@@ -13,6 +13,7 @@ class HorizontalBreedList: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var dataSource: [Breed] = []
+    private var selectedBreed: Breed?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,5 +48,27 @@ extension HorizontalBreedList: UICollectionViewDelegate, UICollectionViewDataSou
             return cell
         }
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        QuizCoordinator.shared.showBreedDetails(breed: dataSource[indexPath.row])
+    }
+    
+    // MARK:- Context Menu
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        let identifier = NSString(string: dataSource[indexPath.row].id)
+        selectedBreed = dataSource[indexPath.row]
+        
+        return UIContextMenuConfiguration(identifier: identifier, previewProvider: {
+            return BreedDetailsView(breed: self.selectedBreed!)
+        }, actionProvider: nil)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willPerformPreviewActionForMenuWith configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating) {
+        animator.addCompletion {
+            guard let selectedBreed = self.selectedBreed else { return }
+            QuizCoordinator.shared.showBreedDetails(breed: selectedBreed)
+        }
     }
 }

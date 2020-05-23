@@ -13,6 +13,7 @@ class BreedListView: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var viewModel: BreedViewModel!
+    private var selectedBreed: Breed?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,4 +64,25 @@ extension BreedListView: UICollectionViewDelegate, UICollectionViewDataSource {
         let details = BreedDetailsView(breed: breed)
         self.present(details, animated: true, completion: nil)
     }
+    
+    // MARK:- Context Menu
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        let identifier = NSString(string: viewModel.dataSource[indexPath.row].id)
+        selectedBreed = self.viewModel.dataSource[indexPath.row]
+        
+        return UIContextMenuConfiguration(identifier: identifier, previewProvider: {
+            return BreedDetailsView(breed: self.selectedBreed!)
+        }, actionProvider: nil)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willPerformPreviewActionForMenuWith configuration: UIContextMenuConfiguration, animator: UIContextMenuInteractionCommitAnimating) {
+        animator.addCompletion {
+            guard let selectedBreed = self.selectedBreed else { return }
+            let viewController = BreedDetailsView(breed: selectedBreed)
+            self.show(viewController, sender: self)
+        }
+    }
 }
+
+
