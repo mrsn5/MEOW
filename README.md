@@ -1,1 +1,5 @@
 # MEOW
+
+![](https://github.com/mrsn5/MEOW/blob/master/MEOW/Assets.xcassets/screenshots/1.gif)       |  ![](https://github.com/mrsn5/MEOW/blob/master/MEOW/Assets.xcassets/screenshots/2.gif)       |  ![](https://github.com/mrsn5/MEOW/blob/master/MEOW/Assets.xcassets/screenshots/3.gif)       |  ![](https://github.com/mrsn5/MEOW/blob/master/MEOW/Assets.xcassets/screenshots/4.gif)       |  ![](https://github.com/mrsn5/MEOW/blob/master/MEOW/Assets.xcassets/screenshots/5.gif)
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/mrsn5/MEOW/blob/master/MEOW/Assets.xcassets/screenshots/1.PNG)       |  ![](https://github.com/mrsn5/MEOW/blob/master/MEOW/Assets.xcassets/screenshots/2.PNG)       |  ![](https://github.com/mrsn5/MEOW/blob/master/MEOW/Assets.xcassets/screenshots/3.PNG)       |  ![](https://github.com/mrsn5/MEOW/blob/master/MEOW/Assets.xcassets/screenshots/4.PNG)       |  ![](https://github.com/mrsn5/MEOW/blob/master/MEOW/Assets.xcassets/screenshots/5.PNG)
