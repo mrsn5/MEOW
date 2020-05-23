@@ -323,10 +323,10 @@
 		C3A69C6F24791559000AF664 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				C3A69C7024791559000AF664 /* GalleryFeedView.xib */,
 				C3A69C7124791559000AF664 /* GalleryFeedCell.swift */,
-				C3A69C7224791559000AF664 /* GalleryFeedView.swift */,
 				C3A69C7324791559000AF664 /* GalleryFeedCell.xib */,
+				C3A69C7224791559000AF664 /* GalleryFeedView.swift */,
+				C3A69C7024791559000AF664 /* GalleryFeedView.xib */,
 			);
 			path = Feed;
 			sourceTree = "<group>";

@@ -29,6 +29,11 @@ class QuestionView: CardContent {
     
     override func awakeFromNib() {
         buttons = [button1, button2, button3, button4]
+        for b in buttons {
+            b.titleLabel?.numberOfLines = 0
+            b.titleLabel?.lineBreakMode = .byWordWrapping
+            b.titleLabel?.textAlignment = .center
+        }
         disable()
     }
     

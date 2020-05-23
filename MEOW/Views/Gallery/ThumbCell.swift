@@ -46,7 +46,9 @@ class ThumbCell: UICollectionViewCell {
         guard let image = catImage else { return }
         self.catImage = image
         imageViewModel.load(string: image.url) { [weak self] image in
-            guard let image = image else { return }
+            guard let image = image else {
+                return
+            }
             guard let size = self?.imageView.frame.size else { return }
             DispatchQueue.global(qos: .userInteractive).async {
                 let resized = image.resizeFillImage(for: size)

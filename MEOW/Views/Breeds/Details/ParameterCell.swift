@@ -9,10 +9,19 @@
 import UIKit
 
 class ParameterCell: UICollectionViewCell {
-
+    
+    static let reuseID = String(describing: ParameterCell.self)
+    
+    @IBOutlet weak var parameterLabel: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    func configure(text: String, value: Double) {
+        parameterLabel.text = text
+        progressBar.progress = Float(value)
     }
 
 }

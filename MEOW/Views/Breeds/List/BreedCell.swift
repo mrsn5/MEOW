@@ -40,7 +40,7 @@ class BreedCell: UICollectionViewCell {
         let c2 = UIColor.random(seed: breed.name.djb2hash - 55).cgColor
         gradient.colors = [c1, c2]
         gradient.colors = [ UIColor(named: "light shadow")!.cgColor,
-                            UIColor.systemBackground.withAlphaComponent(0.2).cgColor,
+                            UIColor(named: "light shadow")!.withAlphaComponent(0.1).cgColor,
                             UIColor(named: "light shadow")!.cgColor]
         
         gradient.startPoint = .random(seed: breed.name.djb2hash + 55)
@@ -53,7 +53,7 @@ class BreedCell: UICollectionViewCell {
         let animation1 = CABasicAnimation(keyPath: "startPoint")
         animation1.fromValue = gradient.startPoint
         animation1.toValue = newStart
-        animation1.duration = 10.0
+        animation1.duration = 20.0
         animation1.autoreverses = true
         animation1.repeatCount = Float.infinity
         gradient.removeAnimation(forKey: "startPoint")
@@ -61,7 +61,7 @@ class BreedCell: UICollectionViewCell {
         let animation2 = CABasicAnimation(keyPath: "endPoint")
         animation2.fromValue = gradient.endPoint
         animation2.toValue = gradient.startPoint
-        animation2.duration = 10.0
+        animation2.duration = 20.0
         animation2.autoreverses = true
         animation2.repeatCount = Float.infinity
         gradient.removeAnimation(forKey: "endPoint")

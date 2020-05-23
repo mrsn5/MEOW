@@ -18,15 +18,6 @@ class QuizView: UIViewController {
     
     private var viewModel: QuizViewModel!
     
-//    init(viewModel: QuizViewModel) {
-//        super.init(nibName: String(describing: Self.self), bundle: nil)
-//        self.viewModel = viewModel
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        super.init(coder: coder)
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         start()

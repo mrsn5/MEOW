@@ -40,6 +40,20 @@ struct Breed: Codable, Identifiable, Hashable {
         return "\(countryCode?.flag() ?? "") \(origin ?? "")"
     }
     
+    func lifeSpanText() -> String? {
+        if let lifespan = lifeSpan {
+            return "\(lifespan) average life span"
+        }
+        return nil
+    }
+    
+    func weightText() -> String? {
+        if let weight = weight?.metric {
+            return "\(weight) kgs"
+        }
+        return nil
+    }
+    
     func trueFacts() -> [String] {
         var facts: [String] = []
         if experimental ?? 0 > 0 { facts.append("experimental")}

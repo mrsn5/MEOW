@@ -32,6 +32,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4l-eZ-xiK" customClass="RoundedButton" customModule="MEOW" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="145" height="77.5"/>
                                     <color key="backgroundColor" name="background"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="tintColor" name="background"/>
                                     <state key="normal" title="Button">
                                         <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -43,6 +44,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hls-G2-RcC" customClass="RoundedButton" customModule="MEOW" customModuleProvider="target">
                                     <rect key="frame" x="155" y="0.0" width="145" height="77.5"/>
                                     <color key="backgroundColor" name="background"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="tintColor" name="background"/>
                                     <state key="normal" title="Button">
                                         <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -65,6 +67,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crL-ZW-bzK" customClass="RoundedButton" customModule="MEOW" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="145" height="77.5"/>
                                     <color key="backgroundColor" name="background"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="tintColor" name="background"/>
                                     <state key="normal" title="Button">
                                         <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
@@ -76,6 +79,7 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFx-wW-erG" customClass="RoundedButton" customModule="MEOW" customModuleProvider="target">
                                     <rect key="frame" x="155" y="0.0" width="145" height="77.5"/>
                                     <color key="backgroundColor" name="background"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="tintColor" name="background"/>
                                     <state key="normal" title="Button">
                                         <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
