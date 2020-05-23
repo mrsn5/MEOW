@@ -53,7 +53,7 @@ class QuizService {
         
         for b in selectedBreeds {
             group.enter()
-            catImageService.fetch(count: 1, breedId: b.id, order: "RANDOM") { [weak self] result in
+            catImageService.fetch(count: 10, breedId: b.id, order: "RANDOM") { [weak self] result in
                 if case .failure(let error) = result {
                     handler(.failure(error))
                     self?.cancel()
@@ -63,18 +63,15 @@ class QuizService {
                         handler(.failure(.network(description: "No cat images detected")))
                         return
                     }
-                    let catImage = images[0]
-                    questions.append(
-                        Question(
-                            question: "What is this breed?",
-                            image: catImage.url,
-                            rightAnswer: b.name,
-                            otherOptions: breeds.shuffled()
-                                .filter { $0 != b }
-                                .prefix(3)
-                                .map { $0.name },
-                            catImage: catImage
-                    ))
+                    let catImage = images.shuffled()[0]
+                    
+                    if let self = self {
+                        if 7 > Int.random(in: 0...10) {
+                            questions.append(self.breedQuestion(breed: b, catImage: catImage, breeds: breeds))
+                        } else {
+                            questions.append(self.countryQuestions(breed: b, catImage: catImage, breeds: breeds))
+                        }
+                    }
                     group.leave()
                 }
             }
@@ -83,6 +80,33 @@ class QuizService {
         group.notify(queue: .main) {
             handler(.success(Quiz(questions: questions)))
         }
+    }
+    
+    func breedQuestion(breed: Breed, catImage: CatImage, breeds: [Breed]) -> Question {
+        return Question(
+                question: "What is this breed?",
+                image: catImage.url,
+                rightAnswer: breed.name,
+                otherOptions: breeds.shuffled()
+                    .filter { $0 != breed }
+                    .prefix(3)
+                    .map { $0.name },
+                catImage: catImage
+        )
+    }
+    
+    func countryQuestions(breed: Breed, catImage: CatImage, breeds: [Breed]) -> Question {
+        let countries: [String] = Array(Set(breeds
+            .filter { $0.countryCode != breed.countryCode }
+            .map { $0.country() }))
+        
+        return Question(
+                question: "Where am I from?",
+                image: catImage.url,
+                rightAnswer: breed.country(),
+                otherOptions: Array(countries.prefix(3)),
+                catImage: catImage
+        )
     }
     
     

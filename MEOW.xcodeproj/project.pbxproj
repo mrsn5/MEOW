@@ -77,6 +77,8 @@
 		C3A69CDD247968C5000AF664 /* QuizView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3A69CD3247968C5000AF664 /* QuizView.xib */; };
 		C3A69CDE247968C5000AF664 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3A69CD4247968C5000AF664 /* QuestionView.xib */; };
 		C3A69CE02479692B000AF664 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69CDF2479692B000AF664 /* QuizViewModel.swift */; };
+		C3A69CE72479B1B3000AF664 /* ParameterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A69CE52479B1B3000AF664 /* ParameterCell.swift */; };
+		C3A69CE82479B1B3000AF664 /* ParameterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3A69CE62479B1B3000AF664 /* ParameterCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,6 +154,8 @@
 		C3A69CD3247968C5000AF664 /* QuizView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizView.xib; sourceTree = "<group>"; };
 		C3A69CD4247968C5000AF664 /* QuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
 		C3A69CDF2479692B000AF664 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		C3A69CE52479B1B3000AF664 /* ParameterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterCell.swift; sourceTree = "<group>"; };
+		C3A69CE62479B1B3000AF664 /* ParameterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParameterCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -362,6 +366,8 @@
 			children = (
 				C3A69C91247926B0000AF664 /* BreedDetailsView.swift */,
 				C3A69C92247926B0000AF664 /* BreedDetailsView.xib */,
+				C3A69CE52479B1B3000AF664 /* ParameterCell.swift */,
+				C3A69CE62479B1B3000AF664 /* ParameterCell.xib */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -519,6 +525,7 @@
 			files = (
 				C3A69C2F247837F0000AF664 /* LaunchScreen.storyboard in Resources */,
 				C3A69C7A24791559000AF664 /* GalleryFeedView.xib in Resources */,
+				C3A69CE82479B1B3000AF664 /* ParameterCell.xib in Resources */,
 				C3A69CDE247968C5000AF664 /* QuestionView.xib in Resources */,
 				C3A69CD7247968C5000AF664 /* QuizResultsView.xib in Resources */,
 				C3A69C2C247837F0000AF664 /* Assets.xcassets in Resources */,
@@ -572,6 +579,7 @@
 				C3A69C5A247881E3000AF664 /* Constants.swift in Sources */,
 				C3A69CAD24792CAD000AF664 /* Capsule.swift in Sources */,
 				C3A69C5D247882DC000AF664 /* CodableDecoder.swift in Sources */,
+				C3A69CE72479B1B3000AF664 /* ParameterCell.swift in Sources */,
 				C3A69C852479169A000AF664 /* ImageViewModel.swift in Sources */,
 				C3A69C4C24785CA0000AF664 /* CodableService.swift in Sources */,
 				C3A69C8C24791F37000AF664 /* UIView.swift in Sources */,

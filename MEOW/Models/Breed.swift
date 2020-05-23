@@ -36,6 +36,40 @@ struct Breed: Codable, Identifiable, Hashable {
     let weight: Weight?
     let wikipediaURL: String?
 
+    func country() -> String {
+        return "\(countryCode?.flag() ?? "") \(origin ?? "")"
+    }
+    
+    func trueFacts() -> [String] {
+        var facts: [String] = []
+        if experimental ?? 0 > 0 { facts.append("experimental")}
+        if hairless ?? 0 > 0 { facts.append("hairless")}
+        if natural ?? 0 > 0 { facts.append("natural")}
+        if rare ?? 0 > 0 { facts.append("rare")}
+        if rex ?? 0 > 0 { facts.append("rex")}
+        if suppressedTail ?? 0 > 0 { facts.append("suppressedtail")}
+        if shortLegs ?? 0 > 0 { facts.append("shortlegs")}
+        if hypoallergenic ?? 0 > 0 { facts.append("hypoallergenic")}
+        return facts
+    }
+    
+    func percentFacts() -> [String: Double] {
+        var dict: [String: Double] = [:]
+        dict["Adaptability"] = Double(adaptability ?? 0) / 5
+        dict["Affection Level"] = Double(affectionLevel ?? 0) / 5
+        dict["Child Friendly"] = Double(childFriendly ?? 0) / 5
+        dict["Dog Friendly"] = Double(dogFriendly ?? 0) / 5
+        dict["Energy Level"] = Double(energyLevel ?? 0) / 5
+        dict["Grooming"] = Double(grooming ?? 0) / 5
+        dict["Health Issues"] = Double(healthIssues ?? 0) / 5
+        dict["Intelligence"] = Double(intelligence ?? 0) / 5
+        dict["Shedding Level"] = Double(sheddingLevel ?? 0) / 5
+        dict["Social Needs"] = Double(socialNeeds ?? 0) / 5
+        dict["Stranger Friendly"] = Double(strangerFriendly ?? 0) / 5
+        dict["Vocalisation"] = Double(vocalisation ?? 0) / 5
+        return dict
+    }
+    
     enum CodingKeys: String, CodingKey {
         case adaptability
         case affectionLevel = "affection_level"

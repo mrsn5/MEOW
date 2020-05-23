@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QuestionView" customModule="CatTastUIKit" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QuestionView" customModule="MEOW" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -29,7 +29,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uIs-bo-wDf">
                             <rect key="frame" x="0.0" y="0.0" width="300" height="77.5"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4l-eZ-xiK" customClass="RoundedButton" customModule="CatTastUIKit" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4l-eZ-xiK" customClass="RoundedButton" customModule="MEOW" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="145" height="77.5"/>
                                     <color key="backgroundColor" name="background"/>
                                     <color key="tintColor" name="background"/>
@@ -40,7 +40,7 @@
                                         <action selector="buttonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="nJO-pZ-gVc"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hls-G2-RcC" customClass="RoundedButton" customModule="CatTastUIKit" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hls-G2-RcC" customClass="RoundedButton" customModule="MEOW" customModuleProvider="target">
                                     <rect key="frame" x="155" y="0.0" width="145" height="77.5"/>
                                     <color key="backgroundColor" name="background"/>
                                     <color key="tintColor" name="background"/>
@@ -62,7 +62,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zXT-PH-d3p">
                             <rect key="frame" x="0.0" y="87.5" width="300" height="77.5"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crL-ZW-bzK" customClass="RoundedButton" customModule="CatTastUIKit" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="crL-ZW-bzK" customClass="RoundedButton" customModule="MEOW" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="145" height="77.5"/>
                                     <color key="backgroundColor" name="background"/>
                                     <color key="tintColor" name="background"/>
@@ -73,7 +73,7 @@
                                         <action selector="buttonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="9Mz-Nt-8R0"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFx-wW-erG" customClass="RoundedButton" customModule="CatTastUIKit" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFx-wW-erG" customClass="RoundedButton" customModule="MEOW" customModuleProvider="target">
                                     <rect key="frame" x="155" y="0.0" width="145" height="77.5"/>
                                     <color key="backgroundColor" name="background"/>
                                     <color key="tintColor" name="background"/>
@@ -111,6 +111,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3Yo-AD-VTP" secondAttribute="trailing" constant="10" id="kMV-yK-irm"/>
                 <constraint firstItem="Oag-6Y-Pkr" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="odm-xg-842"/>
                 <constraint firstItem="Oag-6Y-Pkr" firstAttribute="top" secondItem="oQc-Tx-Nca" secondAttribute="bottom" id="qIh-5q-lHD"/>
+                <constraint firstItem="oQc-Tx-Nca" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="vZA-xL-3mS"/>
                 <constraint firstItem="Oag-6Y-Pkr" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="3:4" id="wbI-tg-N6S"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="3Yo-AD-VTP" secondAttribute="bottom" constant="20" id="wwW-zU-cdc"/>
                 <constraint firstItem="3Yo-AD-VTP" firstAttribute="top" secondItem="Oag-6Y-Pkr" secondAttribute="bottom" constant="10" id="z0U-gZ-Xn5"/>

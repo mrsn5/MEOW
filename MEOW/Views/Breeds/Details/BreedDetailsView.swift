@@ -13,12 +13,11 @@ class BreedDetailsView: UIViewController {
     
     @IBOutlet weak var breedLabel: UILabel!
     @IBOutlet weak var altLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var blureImageView: UIImageView!
-    @IBOutlet weak var backArrowButton: UIButton!
-    @IBOutlet weak var nextArrowButton: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var hashtagsLabel: UILabel!
     
     private var images: [UIImage] = []
     private var breed: Breed!
@@ -47,8 +46,8 @@ class BreedDetailsView: UIViewController {
         pageControl.numberOfPages = 0
         breedLabel.text = breed.name
         altLabel.text = breed.altNames
-        backArrowButton.isEnabled = false
-        nextArrowButton.isEnabled = false
+        hashtagsLabel.text = breed.trueFacts().map { "#\($0)" }.joined(separator: " ")
+        countryLabel.text = (breed.countryCode?.flag() ?? "") + " " + (breed.origin ?? "")
         
         imageView.isUserInteractionEnabled = true
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(swipe(_:)))
@@ -57,9 +56,6 @@ class BreedDetailsView: UIViewController {
         viewModel.fetch(breed: breed) { [weak self] catImages in
             self?.pageControl.numberOfPages = catImages?.count ?? 0
             self?.showImage(at: 0)
-            
-            self?.backArrowButton.isEnabled = true
-            self?.nextArrowButton.isEnabled = true
         }
     }
     
@@ -82,12 +78,12 @@ class BreedDetailsView: UIViewController {
         }
     }
     
-    @IBAction func backTapped(_ sender: Any) {
+    func backTapped() {
         currentIndex -= 1
         showImage(at: currentIndex)
     }
     
-    @IBAction func nextTapped(_ sender: Any) {
+    func nextTapped() {
         currentIndex += 1
         showImage(at: currentIndex)
     }
@@ -100,11 +96,11 @@ class BreedDetailsView: UIViewController {
         case .ended:
             let diff = (lastPoints.first?.x ?? 0) - (lastPoints.last?.x ?? 0)
             if diff < -50 {
-                backTapped(self)
+                backTapped()
             }
             
             if diff > 50 {
-                nextTapped(self)
+                nextTapped()
             }
             lastPoints = []
         case .changed:

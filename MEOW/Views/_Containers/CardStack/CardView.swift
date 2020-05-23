@@ -162,12 +162,12 @@ class CardView: UIView {
 //        let centerOfParentContainer = CGPoint(x: startPosition.midX, y: startPosition.midY)
 
         
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.center = CGPoint(x: self.center.x + 400 * (right ? 1 : -1), y: self.center.y + 75)
             self.alpha = 0
             
-            let rotation = (right ? -1 : 1) * tan(self.frame.width * 2.0 / self.frame.height)
-            self.transform = CGAffineTransform(rotationAngle: rotation)
+            let rotation = (right ? 1 : -1) * 3.14 / 3
+            self.transform = CGAffineTransform(rotationAngle: CGFloat(rotation))
         }) { _ in
             self.delegate?.swipeDidEnd()
             self.delegate?.setSwippingState(inSwipping: false)

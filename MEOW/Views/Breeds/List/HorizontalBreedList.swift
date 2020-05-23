@@ -28,7 +28,7 @@ class HorizontalBreedList: UIView {
         
         
         flow.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 50)
-        let width = frame.width / 3.5
+        let width:CGFloat = 120.0
         flow.itemSize = CGSize(width: width, height: collectionView.frame.height)
         //        flow.minimumInteritemSpacing = 5
 //        flow.minimumLineSpacing = 5

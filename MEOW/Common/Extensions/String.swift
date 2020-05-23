@@ -28,4 +28,13 @@ extension String {
         let hexBytes = digest.map { String(format: "%02hhx", $0) }
         return hexBytes.joined()
     }
+    
+    func flag() -> String {
+        let base : UInt32 = 127397
+        var s = ""
+        for v in self.unicodeScalars {
+            s.unicodeScalars.append(UnicodeScalar(base + v.value)!)
+        }
+        return String(s)
+    }
 }
